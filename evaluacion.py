@@ -2,6 +2,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.ensemble import GradientBoostingRegressor
+from sklearn._loss._loss import CyHuberLoss
 import pickle
 
 def preparacion(values):
