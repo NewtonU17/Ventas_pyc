@@ -64,10 +64,12 @@ def preparacion(values):
     return(x_data)
 #values = [True,True,False,True,True,False,False,False,1.5,50,2,1.4,10,"Sex"]
 #x_data = preparacion(values)
+from joblib import dump, load
+
+# Guardar el modelo
 
 def prediccion(x_data):
-    with open("modelo_pyc.pk", 'rb') as f:
-        modelo_escogido = pickle.load(f,fix_imports=True)
+    modelo_escogido = load("modelo_pyc.joblib")
     dist = modelo_escogido.predict(x_data)
     return(dist)
 #print(prediccion(x_data))
