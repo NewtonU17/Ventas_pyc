@@ -69,6 +69,8 @@ from joblib import dump, load
 # Guardar el modelo
 
 def prediccion(x_data):
+    import sklearn
+    print(sklearn.__version__)
     modelo_escogido = load("modelo_pyc.joblib")
     dist = modelo_escogido.predict(x_data)
     return(dist)
