@@ -2,7 +2,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.ensemble import GradientBoostingRegressor
-import pickle as pk
+import pickle
 
 def preparacion(values):
     #con = np.array(values[13])
@@ -65,7 +65,8 @@ def preparacion(values):
 #x_data = preparacion(values)
 
 def prediccion(x_data):
-    modelo_escogido =  pk.load(open("modelo_pyc.pk", "rb"))
+    with open("model0_pyc.pk", 'rb') as f:
+        modelo_escogido = pickle.load(f)
     dist = modelo_escogido.predict(x_data)
     return(dist)
 #print(prediccion(x_data))
